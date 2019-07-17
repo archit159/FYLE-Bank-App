@@ -18,7 +18,7 @@ def init_db():
 
 @application.route('/create_jwt_token', methods=['GET'])
 def create_jwt_token():
-    access_token = create_access_token(identity='flask_app',fresh=datetime.timedelta(days=5))
+    access_token = create_access_token(identity='flask_app',fresh=datetime.timedelta(days=5),expires_delta=False)
     return access_token
 
 @application.route('/bank_details', methods=['GET'])
