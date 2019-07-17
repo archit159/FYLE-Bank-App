@@ -9,6 +9,7 @@ with open(os.path.dirname(__file__) + '/../app-configs/app_config.json') as cfg_
     Config = json.load(cfg_file)
 
 application = Flask(__name__)
+
 application.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
 application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 application.config['SECRET_KEY'] = Config['secret_key']
